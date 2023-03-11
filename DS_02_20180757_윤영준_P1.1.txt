@@ -29,7 +29,7 @@ i <- i + 1 //행 i, n번 반복을 위한 코드
 end while
 return B //전치행렬 B 출력
 
-[알고리즘의 시간 복잡도 분석]                 	      s/e 		Frequency		Total steps
+[알고리즘의 시간 복잡도 분석]                 	        s/e 		Frequency		Total steps
 Algorithm Transpose_Mat(A,n) 				 0		    0			     0
 Input : n개의 양의 정수 값을 갖는 배열 A		 	 0		    0			     0
 Output : 전치행렬 B 					 0		    0			     0
