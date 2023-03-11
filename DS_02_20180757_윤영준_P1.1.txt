@@ -35,15 +35,15 @@ Input : n개의 양의 정수 값을 갖는 배열 A		 	 0		    0			     0
 Output : 전치행렬 B 					 0		    0			     0
 i <- 1 							 1		    1			     1
 j <- 1 							 1		    1			     1
-while (i <= n) do 					 1		   n+1		    n+1
+while (i <= n) do 					 1		   n+1		    	    n+1
 	while (j <= n) do 				 1		  n(n+1)		   n^2+n
-		B[i][j] <- A[j][i] 			 1		   n^2		    n^2
-		j <- j + 1 				 1		   n^2		    n^2
+		B[i][j] <- A[j][i] 			 1		   n^2		  	    n^2
+		j <- j + 1 				 1		   n^2			    n^2
 	i <- i + 1 					 1		    n			     n
 end while						 1		    1			     1
 return B						 1		    1			     1
 
-			total								 3n^2+3n+3
+			total						 3n^2+3n+3
 
 [빅오 표기법]
 f(n) = 3n^2+3n+3 = O(n^2)
