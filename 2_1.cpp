@@ -12,13 +12,13 @@
       { 5,3,2 } };*/
 
 
-      // 출력
-       //입력으로 주어진 희소행렬 Sparse_A를 이용해 전치행렬 S_b를 계산하여
-       //S_b에 저장한 정보를 0을 포함한 전치행렬 전체 항을 화면에 출력
+// 출력
+//입력으로 주어진 희소행렬 Sparse_A를 이용해 전치행렬 S_b를 계산하여
+//S_b에 저장한 정보를 0을 포함한 전치행렬 전체 항을 화면에 출력
 
-      // 조건
-       //Element* Transpose_Triple1(Element S_a[]) 함수 구현
-       //void Print_Sparse_Mat(Element arr[]) 함수 구현
+// 조건
+//Element* Transpose_Triple1(Element S_a[]) 함수 구현
+//void Print_Sparse_Mat(Element arr[]) 함수 구현
 
 #include <iostream>
 
@@ -85,7 +85,7 @@ void Print_Sparse_Mat(Element arr[]) { // 출력할 arr 입력
 
 
 // main 함수
-int main() {
+int main1() {
 
     Element Sparse_A[MAX_ELEMENTS] = { {6,6,7}, // 입력, 희소행렬 S_a
        {0,2,6},
@@ -107,6 +107,4 @@ int main() {
 }
 
 // 과제에 대한 고찰
-// 시간 복잡도를 계산하는 방법과 중첩 루프는 제곱, 세제곱이 된다는 것을 학습한 후 중첩 루프를 덜 써야 겠다고 마음먹었는데
-// 중첩 루프를 사용하는 방법 대신 배열에서 위 알고리즘과 같은 희소행렬을 사용하여 시간 복잡도를 줄일 수 있다는 것을 배웠다.
-// 또한 대부분의 원소가 0인 행렬을 효과적으로 처리할 수 있는 방법을 배웠다.
+// 대부분의 원소가 0인 행렬을 효과적으로 처리할 수 있는 방법을 배웠다.
