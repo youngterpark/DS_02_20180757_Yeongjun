@@ -4,21 +4,21 @@ using namespace std;
 
 int main(void) {
 	Node* head = NULL;
-	// ±âº» ³ëµå »ı¼º
-	Append_Node(&head, Create_Node(15)); //15³ëµå »ı¼º ¹× Ãß°¡
-	Append_Node(&head, Create_Node(31)); //31³ëµå »ı¼º ¹× Ãß°¡
+	// ê¸°ë³¸ ë…¸ë“œ ìƒì„±
+	Append_Node(&head, Create_Node(15)); //15ë…¸ë“œ ìƒì„± ë° ì¶”ê°€
+	Append_Node(&head, Create_Node(31)); //31ë…¸ë“œ ìƒì„± ë° ì¶”ê°€
 	Append_Node(&head, Create_Node(3)); 
-	Print_Linked_List(head); // ¿¬°á¸®½ºÆ® ÀüÃ¼ Ãâ·Â
+	Print_Linked_List(head); // ì—°ê²°ë¦¬ìŠ¤íŠ¸ ì „ì²´ ì¶œë ¥
 
-	//Get_Node()ÇÔ¼ö ±â´É Å×½ºÆ®
+	//Get_Node()í•¨ìˆ˜ ê¸°ëŠ¥ í…ŒìŠ¤íŠ¸
 	Node* temp = Get_Node(head, 0);
 	printf("Get_Node() test: %d\n", temp->data);
 
-	//Insert_Node_After() ÇÔ¼ö ±â´É Å×½ºÆ®
+	//Insert_Node_After() í•¨ìˆ˜ ê¸°ëŠ¥ í…ŒìŠ¤íŠ¸
 	Insert_Node_After(Get_Node(head, 0), Create_Node(25));
 	Print_Linked_List(head);
 
-	//Remove_Node() ÇÔ¼ö ±â´É Å×½ºÆ®
+	//Remove_Node() í•¨ìˆ˜ ê¸°ëŠ¥ í…ŒìŠ¤íŠ¸
 	Remove_Node(&head, Get_Node(head, 0));
 	Print_Linked_List(head);
 	return 0;
