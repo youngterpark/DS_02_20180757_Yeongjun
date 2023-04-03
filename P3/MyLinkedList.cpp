@@ -21,7 +21,7 @@ void Destroy_Node(Node* node) {
 
 void Append_Node(Node** head, Node* newNode) {
 	// 3-1
-	if (*head == NULL) //*head´Â Ã¹ ³ëµå ÁÖ¼Ò, Node*ÀÇ ÁÖ¼Ò¶ó¼­ Node**.
+	if (*head == NULL) //*headëŠ” ì²« ë…¸ë“œ ì£¼ì†Œ, Node*ì˜ ì£¼ì†Œë¼ì„œ Node**.
 	{
 		*head = newNode;
 	}
@@ -36,7 +36,7 @@ void Append_Node(Node** head, Node* newNode) {
 	}
 }
 
-Node* Get_Node(Node* head, int pos)//³ëµå Å½»ö, (head ³ëµå=Ã¹ ³ëµåÀÇ ÁÖ¼Ò¸¦ °¡¸®Å´, Ã£°í ½ÍÀº ³ëµå °ªÀÌ ¾Æ´Ï¶ó À§Ä¡³×) pos¹øÂ° ³ëµå GetÇÏ´Â ÇÔ¼ö
+Node* Get_Node(Node* head, int pos)//ë…¸ë“œ íƒìƒ‰, (head ë…¸ë“œ=ì²« ë…¸ë“œì˜ ì£¼ì†Œë¥¼ ê°€ë¦¬í‚´, ì°¾ê³  ì‹¶ì€ ë…¸ë“œ ê°’ì´ ì•„ë‹ˆë¼ ìœ„ì¹˜ë„¤) posë²ˆì§¸ ë…¸ë“œ Getí•˜ëŠ” í•¨ìˆ˜
 {
 	Node* iter = head;
 	int i = 0;
@@ -48,11 +48,11 @@ Node* Get_Node(Node* head, int pos)//³ëµå Å½»ö, (head ³ëµå=Ã¹ ³ëµåÀÇ ÁÖ¼Ò¸¦ °¡¸®
 	return iter; 
 }
 
-void Remove_Node(Node** head, Node* targetNode) //³ëµå »èÁ¦
+void Remove_Node(Node** head, Node* targetNode) //ë…¸ë“œ ì‚­ì œ
 {
-	// ¿¬°áÀ» ½ÃÄÑÁÖ°í »èÁ¦¸¦ ÇØ¾ß ÇÔ.
+	// ì—°ê²°ì„ ì‹œì¼œì£¼ê³  ì‚­ì œë¥¼ í•´ì•¼ í•¨.
 	Node* cur = *head;
-	Node* bef = *head; // Ã¹ ³ëµå¸¦ »èÁ¦ÇÒ ¶§´Â µû·Î Ã³¸®ÇÔ.
+	Node* bef = *head; // ì²« ë…¸ë“œë¥¼ ì‚­ì œí•  ë•ŒëŠ” ë”°ë¡œ ì²˜ë¦¬í•¨.
 	while (cur != NULL)
 	{
 		if (cur->data == targetNode->data)
@@ -76,10 +76,10 @@ void Remove_Node(Node** head, Node* targetNode) //³ëµå »èÁ¦
 	}
 }
 
-void Insert_Node_After(Node* currentNode, Node* newNode) //³ëµå »ğÀÔ
+void Insert_Node_After(Node* currentNode, Node* newNode) //ë…¸ë“œ ì‚½ì…
 {
-	// <25³ëµå¸¦ 15³ëµå µÚ¿¡ »ğÀÔ>
-	// 15 ³ëµå ÁÖ¼Ò Á¤º¸ È¹µæ
+	// <25ë…¸ë“œë¥¼ 15ë…¸ë“œ ë’¤ì— ì‚½ì…>
+	// 15 ë…¸ë“œ ì£¼ì†Œ ì •ë³´ íšë“
 	if (currentNode->link != NULL)
 	{
 		newNode->link = currentNode->link;
@@ -91,10 +91,10 @@ void Insert_Node_After(Node* currentNode, Node* newNode) //³ëµå »ğÀÔ
 	}
 
 	
-	// 25 ³ëµå »ı¼º
+	// 25 ë…¸ë“œ ìƒì„±
 	
-	// 25³ëµåÀÇ link¸¦ 15³ëµåÀÇ link·Î ¾÷µ¥ÀÌÆ®
-	// 15³ëµåÀÇ link¸¦ 27³ëµåÀÇ ÁÖ¼Ò·Î ¾÷µ¥ÀÌÆ®
+	// 25ë…¸ë“œì˜ linkë¥¼ 15ë…¸ë“œì˜ linkë¡œ ì—…ë°ì´íŠ¸
+	// 15ë…¸ë“œì˜ linkë¥¼ 27ë…¸ë“œì˜ ì£¼ì†Œë¡œ ì—…ë°ì´íŠ¸
 }
 
 void Print_Linked_List(Node* head)
