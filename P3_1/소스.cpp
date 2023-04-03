@@ -14,7 +14,6 @@ int main(void) {
 	// 기본 노드 생성
 	Append_Node(&head, Create_Node(15)); //15노드 생성 및 추가
 	Append_Node(&head, Create_Node(31)); //31노드 생성 및 추가
-	Append_Node(&head, Create_Node(3)); //3노드 생성 및 추가
 	Print_Linked_List(head); // 연결리스트 전체 출력
   
 	return 0;
