@@ -39,7 +39,7 @@
 //{
 //	if (isFull(top))
 //	{
-//		printf("½ºÅÃÀÌ °¡µæ!!");
+//		printf("ìŠ¤íƒì´ ê°€ë“!!");
 //		return;
 //	}
 //	//++(*top);
@@ -52,14 +52,14 @@
 //
 //int isEmpty(int top)
 //{
-//	return top == -1; // True 1 False 0 ¹İÈ¯
+//	return top == -1; // True 1 False 0 ë°˜í™˜
 //}
 //
 //element POP(element* stack, int* top)
 //{
 //	if (isEmpty(*top))
 //	{
-//		printf("½ºÅÃÀÌ ºñ¾îÀÖ½À´Ï´Ù.");
+//		printf("ìŠ¤íƒì´ ë¹„ì–´ìˆìŠµë‹ˆë‹¤.");
 //		return;
 //	}
 //	element temp = stack[*top];
@@ -72,7 +72,7 @@
 //{
 //	srand(time(NULL));
 //
-//	//ÀÚ·á±¸Á¶
+//	//ìë£Œêµ¬ì¡°
 //	element stack[S_SIZE];
 //	int top = -1;
 //
