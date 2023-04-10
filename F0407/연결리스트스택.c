@@ -48,7 +48,7 @@ void POP(Node** top)
 {
 	if (isEmpty(*top))
 	{
-		printf("¿¬°á¸®½ºÆ®°¡ ºñ¾îÀÖ½À´Ï´Ù.");
+		printf("ì—°ê²°ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ìžˆìŠµë‹ˆë‹¤.");
 		return;
 	}
 	Node* temp = *top;
@@ -59,7 +59,7 @@ void POP(Node** top)
 void main()
 {
 	int value;
-	Node* top = NULL; //top³ëµå NULL
+	Node* top = NULL; //topë…¸ë“œ NULL
 	PUSH(&top, 15);
 	PUSH(&top, 30);
 	PUSH(&top, 24);
