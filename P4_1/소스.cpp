@@ -1,4 +1,4 @@
-//½Ç½À°úÁ¦4.1_1 + 4.1_2
+//ì‹¤ìŠµê³¼ì œ4.1_1 + 4.1_2
 
 #include <iostream>
 #include "MyLinkedList.h"
@@ -6,25 +6,25 @@ using namespace std;
 
 int main(void) {
 	// 4.1.1
-	//Node* head = NULL; //head³ëµå NULL
+	//Node* head = NULL; //headë…¸ë“œ NULL
 	//
-	//// ¿øÇü ¿¬°á¸®½ºÆ® ±¸¼º
+	//// ì›í˜• ì—°ê²°ë¦¬ìŠ¤íŠ¸ êµ¬ì„±
 	//Append_Node(&head, Create_Node(15));
 	//Append_Node(&head, Create_Node(25));
 	//Append_Node(&head, Create_Node(31));
 	//Append_Node(&head, Create_Node(24));
-	//// ¿øÇü ¿¬°á¸®½ºÆ® Ãâ·Â
+	//// ì›í˜• ì—°ê²°ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 	//Print_Circular_Linked_List(head);
 
 	// 4.1.2
 	Node* tail = NULL;
 
-	// ¿øÇü ¿¬°á¸®½ºÆ® ±¸¼º
+	// ì›í˜• ì—°ê²°ë¦¬ìŠ¤íŠ¸ êµ¬ì„±
 	Append_Node_T(&tail, Create_Node(15));
 	Append_Node_T(&tail, Create_Node(25));
 	Append_Node_T(&tail, Create_Node(31));
 	Append_Node_T(&tail, Create_Node(24));
-	// ¿øÇü ¿¬°á¸®½ºÆ® Ãâ·Â
+	// ì›í˜• ì—°ê²°ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 	Print_Circular_Linked_List_T(tail);
 
 
@@ -44,4 +44,4 @@ int main(void) {
 
 
 
-// °íÂû
+// ê³ ì°°
