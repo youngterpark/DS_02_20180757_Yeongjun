@@ -36,27 +36,27 @@ void Append_Node(Node** head, Node* newNode) { //노드 추가
 }
 
 void Append_Node_T(Node** tail, Node* newNode) { //Tail 기반 노드 추가
-	if ((*tail) == NULL)
+	if ((*tail) == NULL) // Null일 경우
 	{
-		*tail = newNode;
-		newNode->link = newNode;
+		*tail = newNode; // tail = newNode
+		newNode->link = newNode; // 원형 연결리스트, link = 자기 자신
 	}
 	else
 	{
-		newNode->link = (*tail)->link;
-		(*tail)->link = newNode;
-		*tail = newNode;
+		newNode->link = (*tail)->link; // 일반적으로 newNode의 link <- 원래 tail의 link
+		(*tail)->link = newNode; // tail의 link <- newNode
+		*tail = newNode; // tail을 newNode로 업데이트
 	}
 }
 
 void Print_Circular_Linked_List(Node* head) { // 원형 연결리스트 출력
 	if (head == NULL) return; //헤드가 비어있으면, 함수 종료
-	Node* iter = head;
+	Node* iter = head; // iter = head부터 시작
 	int i = 0;
 	do
 	{
-		printf("node[%d]:%d", i, iter->data);
-		iter = iter->link;
+		printf("node[%d]:%d", i, iter->data); // i = 0 부터 iter, iter.data 출력
+		iter = iter->link; // iter을 iter의 link 노드로 업데이트
 		if (iter != NULL) printf(" -> ");
 		i++;
 	} while (iter != head); //헤드로 돌아올 때까지 반복
@@ -64,14 +64,14 @@ void Print_Circular_Linked_List(Node* head) { // 원형 연결리스트 출력
 	printf("\n");
 }
 void Print_Circular_Linked_List_T(Node* tail) { // Tail 기반 원형 연결리스트 출력 함수
-	Node* head = tail->link;
+	Node* head = tail->link; // 'tail의 link가 head'라는 정보로 탐색
 	if (head == NULL) return; //헤드가 비어있으면, 함수 종료
-	Node* iter = head;
+	Node* iter = head; // iter = head
 	int i = 0;
 	do
 	{
-		printf("node[%d]:%d", i, iter->data);
-		iter = iter->link;
+		printf("node[%d]:%d", i, iter->data); // i = 0 부터 iter, iter.data 출력
+		iter = iter->link; // iter을 iter의 link 노드로 업데이트
 		if (iter != NULL) printf(" -> ");
 		i++;
 	} while (iter != head); //헤드로 돌아올 때까지 반복
