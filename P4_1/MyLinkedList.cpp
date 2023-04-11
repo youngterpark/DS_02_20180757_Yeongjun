@@ -17,21 +17,21 @@ void Destroy_Node(Node* node) { // 노드 소멸 함수
 }
 
 void Append_Node(Node** head, Node* newNode) { //노드 추가
-	Node* tail;
+	Node* tail; //헤드에서 타고 들어갈 tail노드, tail노드 link에 newNode 추가해야 함
 	if ((*head) == NULL) // 현재 헤드가 비어있으면, 새로운 노드를 헤드로 설정
 	{
-		*head = newNode;
-		newNode->link = newNode;
+		*head = newNode; // 헤드노드 = newNode
+		newNode->link = newNode; // 원형 연결리스트이기 때문, link=자기자신
 	}
 	else
 	{
-		tail = *head;
+		tail = *head; // 일반적인 경우, tail=헤드노드 초기화 한 후,
 		do
 		{
-			tail = tail->link;
-		} while (tail->link != *head);
-		tail->link = newNode;
-		newNode->link = *head;
+			tail = tail->link; // link따라 타고 들어감
+		} while (tail->link != *head); // tail의 link가 head노드를 가리키면 tail이 마지막 노드임
+		tail->link = newNode; // tail의 link에 newNode 추가
+		newNode->link = *head; // 원형 연결리스트, newNode link가 head노드 가리키도록
 	}
 }
 
