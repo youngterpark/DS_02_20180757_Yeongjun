@@ -15,7 +15,7 @@ int main(void) {
 	Print_Linked_List(head); // 기본 연결리스트 전체 출력
 
 	// Reverse_List
-	Node* reverse = Reverse_List(head);
+	Node* reverse = Reverse_List(head); //역 연결리스트 구성
 	Print_Linked_List(reverse); // 역 연결리스트 전체 출력
 	printf("\n");
 	return 0;
