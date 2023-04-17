@@ -68,46 +68,47 @@ void DLL_Remove_Node(Node** head, Node* targetNode) // 노드 삭제
 		else
 		{
 			targetNode->next->prev = targetNode->prev; // 타겟 다음의 prev과 원래 타겟 prev 연결
-			DLL_Destroy_Node(targetNode); //제삭제
+			DLL_Destroy_Node(targetNode); //삭제
 			return;
 		}
 	}
 }
 void DLL_Insert_Node_After(Node* currentNode, Node* newNode) // 노드 삽입
 {
-	if (currentNode->next != NULL) // 
+	if (currentNode->next != NULL) // 마지막 노드가 아닐때 삽입
 	{
-		newNode->next = currentNode->next; 
-		currentNode->next->prev = newNode;
-		newNode->prev = currentNode;
-		currentNode->next = newNode;
+		newNode->next = currentNode->next; // newNode next에 다음 노드 연결
+		currentNode->next->prev = newNode; // 다음 노드 prev에 newNode 연결 
+		newNode->prev = currentNode; // newNode prev에 cur노드 연결
+		currentNode->next = newNode; //cur노드 next에 newNode 연결
 	}
 	else 
 	{
-		currentNode->next = newNode;
+		currentNode->next = newNode; // 마지막 노드면 cur노드 뒤에 newNode 연결
+		newNode->prev = currentNode;
 	}
 }
 void DLL_Print_Linked_List(Node* head) // 이중 연결리스트 출력
 {
-	Node* iter = head;
-	int i = 0;
-	while (iter != NULL)
+	Node* iter = head; // iter노드 (= head 노드) 생성
+	int i = 0; 
+	while (iter != NULL) // 마지막노드까지 반복. 마지막 노드 next가 NULL이기 때문.
 	{
-		printf("N[%d]:%d", i, iter->data);
-		iter = iter->next;
-		if (iter != NULL) printf(" <-> ");
+		printf("N[%d]:%d", i, iter->data); // 출력
+		iter = iter->next; // 다음 노드 반복
+		if (iter != NULL) printf(" <-> "); // <-> 연결, 마지막 노드 전까지
 		i++;
 	}
 	printf("\n");
 }
 void DLL_Print_Linked_List_Reverse(Node* tail) // 이중 연결리스트 역순 출력
 {
-	Node* iter = tail;
+	Node* iter = tail; // iter노드 tail에 생성
 	int i = 0;
-	while (iter != NULL)
+	while (iter != NULL) // 마지막 노드까지 반복
 	{
-		printf("N[%d]:%d", i, iter->data);
-		iter = iter->prev;
+		printf("N[%d]:%d", i, iter->data); // 출력
+		iter = iter->prev; //이전 노드 반복
 		if (iter != NULL) printf(" <-> ");
 		i++;
 	}
