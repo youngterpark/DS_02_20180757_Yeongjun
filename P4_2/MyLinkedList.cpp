@@ -25,30 +25,30 @@ void Append_Node(Node** head, Node* newNode) { // 제일 끝에 노드 추가하
 	}
 }
 
-Node* Merge_List(Node* head_a, Node* head_b) {
-	Node* head_c = NULL;
-	while (head_a != NULL && head_b != NULL)
+Node* Merge_List(Node* head_a, Node* head_b) { 노드리스트 두 개 합병
+	Node* head_c = NULL; //새로운 노드 만들어서 합병
+	while (head_a != NULL && head_b != NULL) //a와 b가 하나라도 비어있지 않을때 비교하며 합병
 	{
-		if (head_a->data < head_b->data)
+		if (head_a->data < head_b->data) //b가 더 크면
 		{
-			Append_Node(&head_c, Create_Node(head_a->data));
-			head_a = head_a->link;
+			Append_Node(&head_c, Create_Node(head_a->data)); // c에 a 노드 젤 앞 노드 추가
+			head_a = head_a->link; // a 노드를 링크노드로 업데이트
 		}
-		else
+		else //a가 더 크면
 		{
-			Append_Node(&head_c, Create_Node(head_b->data));
-			head_b = head_b->link;
+			Append_Node(&head_c, Create_Node(head_b->data)); //c에 b 노드 젤 앞 노드 추가
+			head_b = head_b->link; //b 노드를 링크 노드로 업데이트
 		}
 	}
-	while (head_a != NULL)
+	while (head_a != NULL) // a가 남았으면 a 남은것들 c에 순서대로 추가
 	{
-		Append_Node(&head_c, Create_Node(head_a->data));
-		head_a = head_a->link;
+		Append_Node(&head_c, Create_Node(head_a->data)); //c에 a 노드 추가
+		head_a = head_a->link; // a 링크노드로 업데이트
 	}
-	while (head_b != NULL)
+	while (head_b != NULL) // b가 남았으면 b 남은것들 c에 순서대로 추가
 	{
-		Append_Node(&head_c, Create_Node(head_b->data));
-		head_b = head_b->link;
+		Append_Node(&head_c, Create_Node(head_b->data)); //c에 b 노드 추가
+		head_b = head_b->link; // b 링크노드로 업데이트
 	}
 	return head_c;
 }
