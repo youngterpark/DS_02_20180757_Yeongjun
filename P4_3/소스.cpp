@@ -1,3 +1,14 @@
+// 실습과제 4.3
+// 이중 연결리스트를 구현해보자.
+// 아래 함수들을 구현
+//Node* DLL_Create_Node(int newData);
+//void DLL_Destroy_Node(Node* node);
+//void DLL_Append_Node(Node** head, Node* newNode);
+//Node* DLL_Get_Node(Node* head, int pos);
+//void DLL_Remove_Node(Node** head, Node* targetNode); 
+//void DLL_Insert_Node_After(Node* currentNode, Node* newNode);
+
+
 #include <iostream>
 #include "MyDoublyLinkedList.h"
 using namespace std;
