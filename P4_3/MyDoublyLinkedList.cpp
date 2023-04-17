@@ -49,31 +49,33 @@ void DLL_Remove_Node(Node** head, Node* targetNode) // 노드 삭제
 	if (targetNode->prev == NULL) // 헤드노드 삭제
 	{
 		*head = (*head)->next; // 헤드노드 바꿔주고
-		if (*head != NULL) // 노드가 헤드노드 하나만 있을때, head 노드 next는 NULL 이므로
-		(*head)->prev = NULL;
-		DLL_Destroy_Node(targetNode);
+		if (*head != NULL) // 노드가 헤드노드 말고도 더 있는 경우(일반적인 경우)/ 아닐경우 NULL의 prev값은 없으므로 예외처리 해줌.
+		{
+			(*head)->prev = NULL; // 헤드노드 prev = NULL
+		}
+		DLL_Destroy_Node(targetNode); // 타겟노드 삭제
 		return;
 	}
 	
-	else
+	else // 헤드노드 외 노드 삭제
 	{
-		targetNode->prev->next = targetNode->next;
-		if (targetNode->next == NULL)
+		targetNode->prev->next = targetNode->next; //타겟 전 next와 = 원래 타겟 next 연결
+		if (targetNode->next == NULL) // 마지막 노드이면
 		{
-			DLL_Destroy_Node(targetNode);
+			DLL_Destroy_Node(targetNode); //그냥 삭제
 			return;
 		}
 		else
 		{
-			targetNode->next->prev = targetNode->prev;
-			DLL_Destroy_Node(targetNode);
+			targetNode->next->prev = targetNode->prev; // 타겟 다음의 prev과 원래 타겟 prev 연결
+			DLL_Destroy_Node(targetNode); //제삭제
 			return;
 		}
 	}
 }
 void DLL_Insert_Node_After(Node* currentNode, Node* newNode) // 노드 삽입
 {
-	if (currentNode->next != NULL) 
+	if (currentNode->next != NULL) // 
 	{
 		newNode->next = currentNode->next; 
 		currentNode->next->prev = newNode;
