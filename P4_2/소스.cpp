@@ -7,21 +7,21 @@ int main(void) {
 	Node* head_b = NULL;
 	Node* head_c = NULL;
 
-	//a ¿¬°á¸®½ºÆ® ±¸¼º
+	//a ì—°ê²°ë¦¬ìŠ¤íŠ¸ êµ¬ì„±
 	Append_Node(&head_a, Create_Node(10));
 	Append_Node(&head_a, Create_Node(20));
 	Append_Node(&head_a, Create_Node(30));
-	//b ¿¬°á¸®½ºÆ® ±¸¼º
+	//b ì—°ê²°ë¦¬ìŠ¤íŠ¸ êµ¬ì„±
 	Append_Node(&head_b, Create_Node(15));
 	Append_Node(&head_b, Create_Node(25));
 	Append_Node(&head_b, Create_Node(27));
 	Append_Node(&head_b, Create_Node(28));
-	//a,b ¿¬°á¸®½ºÆ® Ãâ·Â
+	//a,b ì—°ê²°ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 	Print_Linked_List(head_a);
 	Print_Linked_List(head_b);
-	//¿¬°á¸®½ºÆ® ÇÕº´ ÇÔ¼ö È£Ãâ
+	//ì—°ê²°ë¦¬ìŠ¤íŠ¸ í•©ë³‘ í•¨ìˆ˜ í˜¸ì¶œ
 	head_c = Merge_List(head_a, head_b);
-	//ÇÕº´µÈ ¿¬°á¸®½ºÆ® Ãâ·Â
+	//í•©ë³‘ëœ ì—°ê²°ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 	Print_Linked_List(head_c);
 	return 0;
 }
