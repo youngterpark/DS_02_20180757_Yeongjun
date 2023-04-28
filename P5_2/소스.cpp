@@ -45,7 +45,7 @@ int Priority(char op) // 우선순위 확인
 		pri = -1;
 		break;
 	}
-	return pri; // 우선순위 력출력
+	return pri; // 우선순위 출력
 }
 void Infix2Postfix(const char* infix_exp, char* postfix_exp) // 중위식->후위식 변환
 {
@@ -97,47 +97,47 @@ void Infix2Postfix(const char* infix_exp, char* postfix_exp) // 중위식->후�
 int Eval_Postfix(char* postfix_exp) // 후위식 계산 및 결과
 {
 	ArrStack<int> stack; // 배열 선언
-	stack.Stack_Init(); // 배열 화초기화
-	int len = strlen(postfix_exp);
-	int result;
+	stack.Stack_Init(); // 배열 초기화
+	int len = strlen(postfix_exp); // 후위식 길이
+	int result; // 연산한 결과
 
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < len; i++) // 후위식 문자열 길이만큼 반복
 	{
-		char token = postfix_exp[i];
-		if (IsDigit(token)) {
-			stack.Stack_Push(token-48); // ASCII 코드 문자열-> 숫자, -48해주면 됨(0~9)
+		char token = postfix_exp[i]; // 토큰 하나 뽑음
+		if (IsDigit(token)) { // 토큰이 숫자면
+			stack.Stack_Push(token-48); // ASCII 코드 문자열-> 숫자, -48해주면 됨(0~9) // 스택에 푸쉬
 		}
-		else if (IsOperator(token))
+		else if (IsOperator(token)) // 토큰이 연산자면 
 		{
-			int op2 = stack.Stack_Pop();
-			int op1 = stack.Stack_Pop();
+			int op2 = stack.Stack_Pop(); // 스택에서 팝 뒤에 먼저 ( - , / 를 위해서)
+			int op1 = stack.Stack_Pop(); // 스택에서 팝 앞 숫자
 
-			switch (token)
+			switch (token) // 토큰(연산자) switch case
 			{
-			case '+':
-				result = op1 + op2;
-				stack.Stack_Push(result);
+			case '+': // + 일 때
+				result = op1 + op2; // 더해서
+				stack.Stack_Push(result); // 결과 저장
 				break;
-			case '-':
-				result = op1 - op2;
-				stack.Stack_Push(result);
+			case '-': // - 일 때
+				result = op1 - op2; // 빼서
+				stack.Stack_Push(result); // 결과 저장
 				break;
-			case '*':
-				result = op1 * op2;
-				stack.Stack_Push(result);
+			case '*': // * 일 때
+				result = op1 * op2; // 곱해서
+				stack.Stack_Push(result); // 결과 저장
 				break;
-			case '/':
-				result = op1 / op2;
-				stack.Stack_Push(result);
+			case '/': // / 일 때
+				result = op1 / op2; // 나눠서
+				stack.Stack_Push(result); // 결과 저장
 				break;
 			default:
 				break;
 			}
 		}
 	}
-	return stack.Stack_Pop();
+	return stack.Stack_Pop(); // 마지막 계산된 결과값 팝
 }
-int main(void) {
+int main(void) { // 메인 코드
 	char exp[] = "(2+5)*(3+4)-(2+(7-5))"; // 계산할 수식
 	char* postfix = new char[strlen(exp) + 1]; // 후위식 변환 결과
 
