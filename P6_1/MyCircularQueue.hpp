@@ -4,28 +4,28 @@
 template <typename T>
 class CircularQueue {
 private:
-	int front;
-	int rear;
-	T* arr;
-	int qSize;
+	int front; // front(인출할 데이터 가리킴)
+	int rear; // rear(스택의 top, 인큐를 위함)
+	T* arr; // 입력이 다른 자료형들을 데이터로 가지는 array
+	int qSize; // qSize = 기본적으론 define한 100, 혹은 입력으로 받은 size
 public:
 	CircularQueue() {
-		front = -1;
-		rear = -1;
-		arr = new T[QUEUE_SIZE];
-		qSize = QUEUE_SIZE;
+		front = -1; // front 초기값 -1
+		rear = -1; // rear 초기값 -1
+		arr = new T[QUEUE_SIZE]; // QUEUE_SIZE 크기의 arr
+		qSize = QUEUE_SIZE; // qSize = QUEUE_SIZE
 	}
 	CircularQueue(int size) {
 		front = -1;
 		rear = -1;
-		arr = new T[size];
-		qSize = size;
+		arr = new T[size]; // 입력 받은 size 크기의 arr
+		qSize = size; // qSize = 입력 받은 size
 	}
 	bool IsEmpty(){
-		return (front == rear);
+		return (front == rear); // 비어 있으면 front == rear
 	}
 	bool IsFull() {
-		return (front == (rear + 1) % QUEUE_SIZE);
+		return (front == (rear + 1) % QUEUE_SIZE); // 가득 차 있으면 front == 
 	}
 	bool Enqueue(T item) {
 		if (IsFull())
